@@ -28,7 +28,7 @@ require_once "../database/connection.php";
                 <div class="alert alert-danger" role="alert">
                     <?=$_SESSION['login_error']?>
                 </div>
-                <?php } session_destroy(); ?>
+                <?php session_unset(); }  ?>
                 <form action="login.php" method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>

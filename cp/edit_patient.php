@@ -144,11 +144,11 @@ include "views/header.php";
                                 </div>
                                 <div class="form-group col-md-2">
                                 <label for="inputZip">weight</label>
-                                <input required type="number" min="1000" value="<?=$info['Weight']?>" class="form-control" id="inputZip" name="weight">
+                                <input required type="number" min="10" value="<?=$info['Weight']?>" class="form-control" id="inputZip" name="weight">
                                 </div>
                                 <div class="form-group col-md-2">
                                 <label for="inputZip">height</label>
-                                <input required type="number" min="1000" value="<?=$info['Height']?>" class="form-control" id="inputZip" name="height">
+                                <input required type="number" min="1" value="<?=$info['Height']?>" class="form-control" id="inputZip" name="height">
                                 </div>
                                 <div class="form-group col-md-6">
                                 <label for="inputState">Blood Group</label>

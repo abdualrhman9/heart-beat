@@ -28,8 +28,8 @@ require_once "../database/connection.php";
                 <div class="alert alert-danger" role="alert">
                     <?=$_SESSION['login_error']?>
                 </div>
-                <?php } session_destroy(); ?>
-                <form action="login.php" method="post">
+                <?php session_unset();  } ?>
+                <form action="./patient/login.php" method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
