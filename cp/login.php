@@ -17,11 +17,11 @@ if(!empty($user)){
         header("location: dashboard.php");
     }else {
         $_SESSION['login_error'] = "تاكد من كلمة المرور واو البريد الالكتروني";
-        header("location: index.php");
+        header("location: /");
     }
 }else {
     $_SESSION['login_error'] = "تاكد من كلمة المرور او البريد الالكتروني";
-    header("location: index.php");
+    header("location: /");
 }
 
 ?>

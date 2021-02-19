@@ -56,7 +56,7 @@ if(!isset($_SESSION['user_id'])){
                         <th scope="col">Gender</th>
                         <th scope="col">Priority</th>
                         <th scope="col">BloodGroup</th>
-                        <th scope="col">MedicalHistory</th>
+                        <th scope="col">Diagnostic</th>
                         <th scope="col">edit</th>
                         
 
@@ -103,15 +103,15 @@ if(!isset($_SESSION['user_id'])){
                         <td><?=$info['BloodGroup']?></td>
                         <td> <a href="patient_exam.php?id=<?=$info['id']?>"> preview </a> </td>
                         <td> <a href="edit_patient.php?id=<?=$info['id']?>">edit </a> </td>
-                        <?php if(hasExamination($info['id'])) { ?>
+                        <!-- <?//php if(hasExamination($info['id'])) { ?>
                         <td>
                             <a href="#">Preview Examination</a>
                         </td>
-                        <?php } else {?>
+                        <?//php } else {?>
                         <td>
-                            <a href="newexam.php?id=<?=$info['id']?>">Add New Examination</a>
+                            <a href="newexam.php?id=<?//=$info['id']?>">Add New Examination</a>
                         </td>
-                        <?php  }?>
+                        <?//php  }?> -->
                     </tr>
 
                     <?php }; ?>

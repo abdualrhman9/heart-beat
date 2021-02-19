@@ -6,6 +6,12 @@
     }
     require_once "../database/connection.php";
     require_once "../api/info_api.php";
+    require_once "../api/patient_api.php";
+    
+    $patients_query = patients_get();
+    $time = time();
+    
+    // exit(var_dump($time-1613751937));
 ?>
 
 
@@ -39,6 +45,24 @@
     
     ?>
     <div class="container-fluid " style="margin-top: 100px;">
+        
+        <div class="row">
+
+            <div class="col-md-8">
+
+            <?php  while($patient = mysqli_fetch_array($patients_query)){ ?>
+                <?php if($time - $patient['updated_at'] >= 86400 ) { ?>
+                    <div class="alert alert-danger" role="alert">
+                        <p> Update required for patient: <?=$patient['Name']?>  </p>
+                        <a href="updatePatient.php?id=<?=$patient['id']?>"> Update </a>
+                    </div>
+                <?php } ?>
+            <?php } ?>
+
+            </div>
+
+        </div>
+            
         <div class="row justify-content-center">
             <div class="col-md-3 text-center mt-4">
                 <div class="card">
@@ -51,8 +75,9 @@
                 </div>
             </div>
             
-            
         </div>
     </div>
+        
+        
 </body>
 </html>

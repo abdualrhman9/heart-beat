@@ -6,6 +6,7 @@
     }
     require_once "../database/connection.php";
     require_once "../api/info_api.php";
+    require_once "../api/patient_api.php";
 ?>
 
 
@@ -56,7 +57,7 @@
                         Pateints
                     </div>
                     <div class="card-body">
-                        <?php  echo info_count();?>
+                        <?php  echo pateints_count();?>
                     </div>
                 </div>
             </div>
@@ -66,7 +67,7 @@
                         Beds
                     </div>
                     <div class="card-body">
-                        <?php  echo info_count();?>
+                        <?php  echo pateints_count();?>
                     </div>
                 </div>
             </div>

@@ -14,10 +14,28 @@ function patient_add($name,$email,$address,$telephone,$age,$gender,$height,$weig
 }
 
 
+function patients_update_updated_at($id){
+    global $db ;
+    $query = mysqli_query($db,"UPDATE  `patient_data` SET `updated_at` ='".time()."' WHERE `id` = ".$id);
+    if($query){
+        return true;
+    }
+    return false;
+}
+
+function patients_update_sub_Priority($id,$value){
+    global $db ;
+    $query = mysqli_query($db,"UPDATE  `patient_data` SET `sub_Priority` ='".$value."' WHERE `id` = ".$id);
+    if($query){
+        return true;
+    }
+    return false;
+}
+
 function patients_get(){
     global $db ;
 
-    $query = mysqli_query($db,"SELECT * FROM `patient_data` ORDER BY Priority ");
+    $query = mysqli_query($db,"SELECT * FROM `patient_data` ORDER BY `sub_Priority` DESC ");
     if(!$query ){
         return false;
     }
@@ -103,6 +121,12 @@ function hasExamination($id){
     return false;
 }
 
+function pateints_count(){
+    global $db;
+    $query = mysqli_query($db,"SELECT * FROM `patient_data` ");
+    $count = mysqli_num_rows($query);
 
+    return $count;
+}
 
 
